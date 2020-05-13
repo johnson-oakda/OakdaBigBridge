@@ -27,7 +27,10 @@ func composer(status, event, actor, repo, workflow, link string) string {
 	// Message text composing
 	text = icons[strings.ToLower(status)] + "  *" + event + "*\n"
 	text += "was made at " + repo + " \nby " + actor + "\n"
-	text += "Check here " + "[" + workflow + "](" + link + ")"
+  text += "Check here " + "[" + workflow + "](" + link + ")"
+
+  // Escape text
+  text = strings.Replace(text, "-", " ", -1)
 
 	return text
 }
@@ -57,7 +60,7 @@ func main() {
 		chat   = os.Getenv("INPUT_CHAT")
 		status = os.Getenv("INPUT_STATUS")
 		event  = os.Getenv("INPUT_EVENT")
-		actor  = os.Getenv("INPUT_ACTOR")
+    actor  = os.Getenv("INPUT_ACTOR")
 
 		// github environment context
 		workflow = os.Getenv("GITHUB_WORKFLOW")
