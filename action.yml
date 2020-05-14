@@ -1,6 +1,6 @@
-name: 'TelegramBridge'
+name: 'OakdaBigBridge'
 description: 'Send GitHub Updates to Telegram, see readme for step by step instructions'
-author: 'gokuldas027'
+author: 'Oakda'
 inputs:
   chat:
     description: 'Chat to send: chat id or @channel_name/add to secrets'
